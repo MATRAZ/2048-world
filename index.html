@@ -5,16 +5,16 @@
 
 function loadXMLDoc(dname)
 {
-  xhttp=new XMLHttpRequest();
-  xhttp.open("GET",dname,false);
+  xhttp=new XMLHttpRequest();//Переменная
+  xhttp.open("GET",dname,false);//Открыть ф-ю с методом "GET"
   try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
-  xhttp.send("");
-  return xhttp;
+  xhttp.send("");//Отправка запроса
+  return xhttp;//Возвращение ф-и переменной "xhttp"
 }
 
-var x=loadXMLDoc("books.xml");
-var xml=x.responseXML;
-path="/bookstore/book[price>35]/title";
+var x=loadXMLDoc("books.xml");//Переменная с ф-й, которая связана с "books.xml"
+var xml=x.responseXML;//Переменная с данными, получеными с "xml"
+path="/bookstore/book[price>35]/title";//Получение title'ов с ценой больше 35
 
 // code for IE
 if (window.ActiveXObject || xhttp.responseType=="msxml-document")
@@ -45,4 +45,3 @@ while (result)
 </script>
 </body>
 </html>
-
