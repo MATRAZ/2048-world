@@ -2,36 +2,32 @@
 
 <bookstore>
 
-<book category="COOKING">
-  <title lang="en">Everyday Italian</title>
-  <author>Giada De Laurentiis</author>
-  <year>2005</year>
-  <price>30.00</price>
+<book category="Porsche">
+  <title lang="en">Germany</title>
+  <author>Фердинанд Порше</author>
+  <year>1931</year>
+  <gas>16.00</gas>
 </book>
 
-<book category="CHILDREN">
-  <title lang="en">Harry Potter</title>
-  <author>J K. Rowling</author>
-  <year>2005</year>
-  <price>29.99</price>
+<book category="BMW">
+  <title lang="en">Germany</title>
+  <author>Норберт Райтхофер</author>
+  <year>1916</year>
+  <price>11.50</price>
 </book>
 
-<book category="WEB">
-  <title lang="en">XQuery Kick Start</title>
-  <author>James McGovern</author>
-  <author>Per Bothner</author>
-  <author>Kurt Cagle</author>
-  <author>James Linn</author>
-  <author>Vaidyanathan Nagarajan</author>
-  <year>2003</year>
-  <price>49.99</price>
+<book category="Mercedes">
+  <title lang="en">Germany</title>
+  <author>Karl Benz</author>
+  <year>1926</year>
+  <price>9.30</price>
 </book>
 
-<book category="WEB">
-  <title lang="en">Learning XML</title>
-  <author>Erik T. Ray</author>
-  <year>2003</year>
-  <price>39.95</price>
+<book category="Dodge">
+  <title lang="en">USA</title>
+  <author>brothers Dodges</author>
+  <year>1900</year>
+  <price>10.00</price>
 </book>
 
 </bookstore>
