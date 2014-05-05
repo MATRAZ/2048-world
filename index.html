@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html>
-<body>
-<script>
-
-function loadXMLDoc(dname)
-{
-  xhttp=new XMLHttpRequest();//Переменная
-  xhttp.open("GET",dname,false);//Открыть ф-ю с методом "GET"
-  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
-  xhttp.send("");//Отправка запроса
-  return xhttp;//Возвращение ф-и переменной "xhttp"
-}
-
-var x=loadXMLDoc("books.xml");//Переменная с ф-й, которая связана с "books.xml"
-var xml=x.responseXML;//Переменная с данными, получеными с "xml"
-path="/bookstore/book[price>35]/title";//Получение title'ов с ценой больше 35
-
-// code for IE
-if (window.ActiveXObject || xhttp.responseType=="msxml-document")
-{
-xml.setProperty("SelectionLanguage","XPath");
-nodes=xml.selectNodes(path);
-for (i=0;i<nodes.length;i++)
-  {
-  document.write(nodes[i].childNodes[0].nodeValue);
-  document.write("<br>");
-  }
-}
-
-// code for Chrome, Firefox, Opera, etc.
-else if (document.implementation && document.implementation.createDocument)
-{
-var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
-var result=nodes.iterateNext();
-
-while (result)
-  {
-  document.write(result.childNodes[0].nodeValue);
-  document.write("<br>");
-  result=nodes.iterateNext();
-  }
-}
-
-</script>
-</body>
+  <body>
+    <script>
+      function loadXMLDoc(dname)
+      {
+        xhttp=new XMLHttpRequest();//Переменная
+        xhttp.open("GET",dname,false);//Открыть ф-ю с методом "GET"
+        try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
+        xhttp.send("");//Отправка запроса
+        return xhttp;//Возвращение ф-и переменной "xhttp"
+      }
+      var x=loadXMLDoc("books.xml");//Переменная с ф-й, которая связана с "books.xml"
+      var xml=x.responseXML;//Переменная с данными, получеными с "xml"
+      path="/bookstore/book[price>35]/title";//Получение title'ов с ценой больше 35
+      // code for IE
+      if (window.ActiveXObject || xhttp.responseType=="msxml-document")
+      {
+        xml.setProperty("SelectionLanguage","XPath");//Указать св-ва
+        nodes=xml.selectNodes(path);//Переменная, содержащая часть xml документа
+        for (i=0;i<nodes.length;i++)
+        {
+          document.write(nodes[i].childNodes[0].nodeValue);//Запись данных на страницу
+          document.write("<br>");//Запись данных на страницу
+        }
+      }
+      else
+      // code for Chrome, Firefox, Opera, etc.
+      if (document.implementation && document.implementation.createDocument)
+      {
+        var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result=nodes.iterateNext();
+        while (result)
+        {
+          document.write(result.childNodes[0].nodeValue);//Запись данных на страницу
+          document.write("<br>");//Запись данных на страницу
+          result=nodes.iterateNext();
+        }
+      }
+    </script>
+  </body>
 </html>
